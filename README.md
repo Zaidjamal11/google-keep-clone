@@ -17,7 +17,7 @@
 2: Change into the project directory:
     cd google-keep-clone
  
-3: nstall the dependencies:
+3: Install the dependencies:
     npm install
     
 4: Start the application:
