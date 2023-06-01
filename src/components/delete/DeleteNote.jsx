@@ -2,8 +2,8 @@ import { useContext } from "react";
 
 import { Card, CardActions, CardContent, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { RestoreFromTrashOutlined as Restore, DeleteForeverOutlined as Delete } from "@mui/icons-material";
 
-import { ArchiveOutlined as Archive, DeleteOutlineOutlined as Delete } from "@mui/icons-material";
 
 import { DataContext } from "../../context/DateProvider";
 
@@ -15,24 +15,24 @@ const StyledCard = styled(Card)`
   border-radius: 8px;
 `;
 
-const Note = ({ note }) => {
+const DeleteNote = ({ note }) => {
 
-  const { notes, setNotes, setArchiveNotes, setDeleteNotes} = useContext(DataContext);
+  const { notes, setNotes, deleteNotes, setDeleteNotes} = useContext(DataContext);
 
 
-  const archiveNote = (note) => {
-    const updatedNotes = notes.filter(data => data.id !== note.id);
-    setNotes(updatedNotes);
-    setArchiveNotes(prevArr => [note, ...prevArr]);
+  const restoreNote = (note) => {
+    const updatedNotes = deleteNotes.filter(data => data.id !== note.id);
+    setDeleteNotes(updatedNotes);
+    setNotes(prevArr => [note, ...prevArr]);
 
   }
 
 
 
-  const deleteNote = () => {
+  const deleteNote = (note) => {
     const updatedNotes = notes.filter(data => data.id !== note.id);
-    setNotes(updatedNotes);
-    setDeleteNotes(prevArr => [note, ...prevArr]);
+    setDeleteNotes(updatedNotes);
+    
     
   }
 
@@ -44,19 +44,22 @@ const Note = ({ note }) => {
         <Typography>{note.text}</Typography>
       </CardContent>
       <CardActions>
-        <Archive 
+      <Delete 
         fontSize="small" 
+        onClick={() => deleteNote(note)}
         style={{marginLeft : "auto" }}
-        onClick={() => archiveNote(note)}
-        />
-        <Delete 
-        fontSize="small" 
-        onClick={() => deleteNote()}
         
         />
+
+        <Restore 
+        fontSize="small" 
+        
+        onClick={() => restoreNote(note)}
+        />
+        
       </CardActions>
     </StyledCard>
   );
 };
 
-export default Note;
+export default DeleteNote;

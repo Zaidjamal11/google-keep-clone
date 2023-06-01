@@ -28,7 +28,7 @@ const EmptyNotes = () => {
     return (
         <ContainerBulb>
             <Light />
-            <Text>Notes you add apper here </Text>
+            <Text>Notes you add appear here </Text>
         </ContainerBulb>
     )
 }
