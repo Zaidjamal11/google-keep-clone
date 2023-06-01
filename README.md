@@ -28,6 +28,7 @@
 
 
 **Acknowledgements**
+
    This project is inspired by the functionality and design of Google Keep.
    
    The project utilizes React for the frontend and Node.js for the backend.
