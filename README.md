@@ -1,7 +1,6 @@
-                                                   **Key Features**
+                                                
+                                                **Key Features**
 **Note Creation and Management**: Create, edit, and organize notes effortlessly. Add labels, colors, and reminders to stay organized.
-
-**Real-time Collaboration:** Collaborate with others by sharing notes and allowing simultaneous editing and updating in real-time.
 
 **Responsive Design:** Enjoy a seamless experience across multiple devices, including desktops, tablets, and smartphones.
 
